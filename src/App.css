@@ -1,38 +1,95 @@
 .App {
   text-align: center;
+  width: 100vw;
+  max-width: 540px;
+  /*height: 80vw;*/
+  box-shadow: inset 0 0 10px 4px #1116;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+body {
+  width: 100vw;
+  /*height: 100vw;*/
+  display: grid;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  /*overflow: hidden;*/
 }
 
-.App-link {
-  color: #61dafb;
+h2 {
+  text-align: center;
+  font-family: Galvji, fantasy;
+  background: #1c1c46;
+  color: #fff;
+  padding: 8px;
+  text-shadow: 1px 1px 4px #111;
+  margin-bottom: 8px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+/*#msg_area {*/
+/*  height: 82%;*/
+/*  padding: 0 12px;*/
+/*  overflow-y: scroll;*/
+/*  scroll-behavior: smooth;*/
+/*}*/
+
+#bot {
+  margin: 10px;
+  background-size: 100%;
+  background: url("https://img.freepik.com/premium-vector/cute-robot-waving-hand-cartoon-character-science-technology-isolated_138676-3155.jpg?w=2000");
 }
+
+/*#robot {*/
+/*  display: flex;*/
+/*  align-items: center;*/
+/*}*/
+
+h3 {
+  font-family: "Academy Engraved LET";
+  font-size: 20px;
+}
+
+#input {
+  height: 7%;
+  min-height: 42px;
+  display: grid;
+  grid-template-columns: 70% 20%;
+  /*margin: 8px 16px;*/
+  border-radius: 32px;
+  margin-top: 25em;
+  /*position: fixed;*/
+  /*background: linear-gradient(#1c1c46 50%, #242486 50%);*/
+}
+
+#text {
+  outline: none;
+  font-size: 20px;
+  background: rgba(96, 130, 171, 0.93);
+  color: #333;
+  border-radius: 32px 0 32px 32px;
+  padding: 0 16px;
+  border: solid 1px #777;
+  border-right: none;
+}
+
+#send {
+  outline: none;
+  font-size: 20px;
+  color: navajowhite;
+  background: black;
+  border-radius: 32px;
+  transition-duration: 0.2s;
+}
+
+#send:active {
+  font-size: 16px;
+
+}
+
+
+
+
