@@ -166,6 +166,22 @@ h3 {
 
  }
 
+ .right {
+     /*width: 100%;*/
+     padding: 15px;
+     text-align: center;
+     background: #0422ee;
+     color: #EDECED;
+     font-style: 1.1em;
+     border-radius: 10px;
+     /* margin: 0 10px 0; */
+     /*position: relative;*/
+     top: 120px;
+     margin-bottom: 20px;
+     float: left;
+
+ }
+
 
 
 
