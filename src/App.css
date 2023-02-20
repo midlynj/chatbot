@@ -150,8 +150,8 @@ h3 {
 
  }
 
- .left {
-     /*width: 100%;*/
+ .right {
+     width: 100%;
      padding: 15px;
      text-align: center;
      background: #118a04;
@@ -161,13 +161,14 @@ h3 {
      /* margin: 0 10px 0; */
      /*position: relative;*/
      top: 120px;
-     margin-bottom: 20px;
+     margin-top: 30px;
      float: right;
+     margin-bottom: 20px;
 
  }
 
- .right {
-     /*width: 100%;*/
+ .left {
+     width: 100%;
      padding: 15px;
      text-align: center;
      background: #0422ee;
@@ -177,7 +178,7 @@ h3 {
      /* margin: 0 10px 0; */
      /*position: relative;*/
      top: 120px;
-     margin-bottom: 20px;
+     margin-bottom: 5px;
      float: left;
 
  }
