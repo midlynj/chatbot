@@ -1,21 +1,24 @@
 /* eslint-disable */
-import React, {useRef} from 'react';
+import React from 'react';
 import './App.css';
 
 function App() {
     function handleInput() {
         let greeting : string[] = ["hello|hi"];
         // @ts-ignore
-        let greetingOptions : any = new RegExp(greeting)
-        // @ts-ignore
+        let greetingOptions : RegExp = new RegExp(greeting);
         let howAreYou : string[] = ["good|fine|ok|alright"];
         // @ts-ignore
-        let feelingResponse : any = new RegExp(howAreYou);
+        let feelingResponse : RegExp = new RegExp(howAreYou);
         // @ts-ignore
         let getUserMessage : any = document.getElementById("text").value
         let clearMessage : any = document.getElementById("text")
-        let uploadUserMessage : any = document.createElement("div");
-        let uploadBotMessage : any = document.createElement("div");
+        let uploadUserMessage: HTMLDivElement = document.createElement("div");
+        let uploadBotMessage: HTMLDivElement = document.createElement("div");
+        let date: Date = new Date;
+        let time : string[] = ["time|whats the time|date|what is today|today date?"];
+        // @ts-ignore
+        let timeOptions : RegExp = new RegExp(time);
 
         if (greetingOptions.test(getUserMessage)) {
             uploadUserMessage.innerHTML= getUserMessage ;
@@ -44,7 +47,7 @@ function App() {
 
             uploadBotMessage.innerText= "typing" ;
             setTimeout(() => {
-                uploadBotMessage.innerText= "That's good to hear. I'm doing great"
+                uploadBotMessage.innerText= "That's good to hear. I'm doing great!"
             }, 2000);
 
             uploadBotMessage.setAttribute("class","left");
@@ -54,7 +57,26 @@ function App() {
 
             clearMessage.value = "";
 
-        }else {
+        } else if (timeOptions.test(getUserMessage)) {
+            uploadUserMessage.innerHTML= getUserMessage;
+            uploadUserMessage.setAttribute("class","right");
+            // @ts-ignore
+            document.getElementById('bot').appendChild(uploadUserMessage);
+
+            uploadBotMessage.innerText= "typing" ;
+            setTimeout(() => {
+                // @ts-ignore
+                uploadBotMessage.innerText= date
+            }, 2000);
+
+            uploadBotMessage.setAttribute("class","left");
+
+            // @ts-ignore
+            document.getElementById('bot').appendChild(uploadBotMessage);
+
+            clearMessage.value = "";
+
+        } else {
             uploadUserMessage.innerHTML= getUserMessage;
             uploadUserMessage.setAttribute("class","right");
             // @ts-ignore
