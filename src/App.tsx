@@ -1,8 +1,11 @@
 /* eslint-disable */
 import React from 'react';
 import './App.css';
+import {jokes} from "./jokes";
 
 function App() {
+    let randomJoke: string = jokes[Math.floor(Math.random()*jokes.length)];
+
     function handleInput() {
         let greeting : string[] = ["hello|hi"];
         // @ts-ignore
@@ -19,6 +22,11 @@ function App() {
         let time : string[] = ["time|whats the time|date|what is today|today date?"];
         // @ts-ignore
         let timeOptions : RegExp = new RegExp(time);
+
+        let tellMeAJoke : string[] = ["laugh|funny"];
+        // @ts-ignore
+        let jokeTriggers : RegExp = new RegExp(tellMeAJoke);
+
 
         if (greetingOptions.test(getUserMessage)) {
             uploadUserMessage.innerHTML= getUserMessage ;
@@ -67,6 +75,26 @@ function App() {
             setTimeout(() => {
                 // @ts-ignore
                 uploadBotMessage.innerText= date
+            }, 2000);
+
+            uploadBotMessage.setAttribute("class","left");
+
+            // @ts-ignore
+            document.getElementById('bot').appendChild(uploadBotMessage);
+
+            clearMessage.value = "";
+
+        } else if (jokeTriggers.test(getUserMessage)) {
+            uploadUserMessage.innerHTML= getUserMessage;
+            uploadUserMessage.setAttribute("class","right");
+            // @ts-ignore
+            document.getElementById('bot').appendChild(uploadUserMessage);
+
+            uploadBotMessage.innerText= "typing" ;
+
+            setTimeout(() => {
+                // @ts-ignore
+                uploadBotMessage.innerText= randomJoke
             }, 2000);
 
             uploadBotMessage.setAttribute("class","left");
