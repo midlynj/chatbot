@@ -7,28 +7,21 @@ function App() {
     let randomJoke: string = jokes[Math.floor(Math.random()*jokes.length)];
 
     function handleInput() {
-        let greeting : string[] = ["hello|hi"];
-        // @ts-ignore
-        let greetingOptions : RegExp = new RegExp(greeting);
-        let howAreYou : string[] = ["good|fine|ok|alright"];
-        // @ts-ignore
-        let feelingResponse : RegExp = new RegExp(howAreYou);
+        let greeting : string[] = ["hello","hi"];
+
+        let howAreYou : string[] = ["good","fine","ok","alright"];
+
         // @ts-ignore
         let getUserMessage : any = document.getElementById("text").value
         let clearMessage : any = document.getElementById("text")
         let uploadUserMessage: HTMLDivElement = document.createElement("div");
         let uploadBotMessage: HTMLDivElement = document.createElement("div");
         let date: Date = new Date;
-        let time : string[] = ["time|whats the time|date|what is today|today date?"];
-        // @ts-ignore
-        let timeOptions : RegExp = new RegExp(time);
+        let time : string[] = ["time","whats the time","date","what is today","today date?"];
 
-        let tellMeAJoke : string[] = ["laugh|funny"];
-        // @ts-ignore
-        let jokeTriggers : RegExp = new RegExp(tellMeAJoke);
+        let tellMeAJoke : string[] = ["laugh","funny"];
 
-
-        if (greetingOptions.test(getUserMessage)) {
+        if (greeting.includes(getUserMessage)) {
             uploadUserMessage.innerHTML= getUserMessage ;
             uploadUserMessage.setAttribute("class","right");
             // @ts-ignore
@@ -47,7 +40,7 @@ function App() {
 
             clearMessage.value =""; // clear the input
 
-        } else if (feelingResponse.test(getUserMessage)) {
+        } else if (howAreYou.includes(getUserMessage)) {
             uploadUserMessage.innerHTML= getUserMessage;
             uploadUserMessage.setAttribute("class","right");
             // @ts-ignore
@@ -65,7 +58,7 @@ function App() {
 
             clearMessage.value = "";
 
-        } else if (timeOptions.test(getUserMessage)) {
+        } else if (time.includes(getUserMessage)) {
             uploadUserMessage.innerHTML= getUserMessage;
             uploadUserMessage.setAttribute("class","right");
             // @ts-ignore
@@ -84,7 +77,7 @@ function App() {
 
             clearMessage.value = "";
 
-        } else if (jokeTriggers.test(getUserMessage)) {
+        } else if (tellMeAJoke.includes(getUserMessage)) {
             uploadUserMessage.innerHTML= getUserMessage;
             uploadUserMessage.setAttribute("class","right");
             // @ts-ignore
